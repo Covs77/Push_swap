@@ -6,7 +6,7 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:40:18 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/25 16:34:40 by cova             ###   ########.fr       */
+/*   Updated: 2023/10/25 18:46:39 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ void	ft_sort_out(t_stack **stack_a, int nums)
 		// programa de ordenacion completo
 		// ft_3tower(&stack_a, &stack_b);
 	} */	
+	ft_free(stack_b);
 	ft_print_list(*stack_a);
 }

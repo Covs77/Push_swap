@@ -6,7 +6,7 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 19:29:21 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/24 18:56:07 by cova             ###   ########.fr       */
+/*   Updated: 2023/10/25 18:21:46 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ int	main(int argc, char **argv)
 		ft_sort_out(stack_a, argc);
 	}
 	ft_error(error);
+	ft_free(stack_a);
 	return (0);
 }

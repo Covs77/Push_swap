@@ -6,7 +6,7 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 18:46:56 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/24 18:08:28 by cova             ###   ########.fr       */
+/*   Updated: 2023/10/25 18:23:25 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ void	ft_min_to_top(t_stack **stack);
 void	ft_on_top(t_stack **s, int counter);
 int		ft_back_order(t_stack *stack);
 void	ft_sort_2(t_stack **s);
+void	ft_free(t_stack **s);
 
 #endif

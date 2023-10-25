@@ -6,7 +6,7 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 19:31:50 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/24 17:36:47 by cova             ###   ########.fr       */
+/*   Updated: 2023/10/25 18:39:06 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ t_stack	*ft_lst_last(t_stack *lst)
 }
 
 ///borro 1ª nodo
-t_stack	*ft_delete_first(t_stack *lista)
+/* t_stack	*ft_delete_first(t_stack *lista)
 {
 	t_stack	*aux;
 
@@ -58,7 +58,7 @@ t_stack	*ft_delete_first(t_stack *lista)
 	lista = lista->next;
 	free(aux);
 	return (lista);
-}
+} */
 
 /// Añado el 1 al fin. Localizo ultimo nodo, hago q apunte al nuevo
 
