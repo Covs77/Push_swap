@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_3tower.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:22:09 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/24 18:04:39 by cova             ###   ########.fr       */
+/*   Updated: 2023/10/26 18:50:27 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	ft_sort3(t_stack **stack)
 			rotate(stack);
 			write(1, "rra\n", 4);
 		}
+		//ft_print_list(*stack);
 	}
 }
 

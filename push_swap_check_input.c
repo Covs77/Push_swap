@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_check_input.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:47:22 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/25 18:25:22 by cova             ###   ########.fr       */
+/*   Updated: 2023/10/26 18:47:23 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,20 +84,23 @@ int	ft_check_inputs(char **str)
 	if (error == 0)
 	{
 		error = error + ft_check_repe(str);
-	}	
+	}
 	if (error == 1)
 		return (1);
 	return (0);
 }
 
-void ft_free(t_stack **s)
+void	ft_free(t_stack **s)
 {
 	t_stack	*aux;
 
-	while (*s != NULL)
+	if (s)
 	{
-		aux = *s;
-		*s = (*s)->next;
-		free(aux);
-	}	
+		while (*s != NULL)
+		{
+			aux = *s;
+			*s = (*s)->next;
+			free(aux);
+		}
+	}
 }

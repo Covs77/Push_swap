@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:45:36 by cleguina          #+#    #+#             */
-/*   Updated: 2023/05/08 18:51:27 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/10/26 18:43:29 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ t_list	*ft_lstlast(t_list *lst)
 		if (lst->next == NULL)
 			return (lst);
 		lst = lst->next;
-	}	
+	}
 	return (lst);
 }

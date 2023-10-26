@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 11:47:37 by cleguina          #+#    #+#             */
-/*   Updated: 2023/05/01 10:56:34 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/10/26 18:42:49 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_atoi(const char *str)
 	while (((*str >= 9) && (*str <= 13)) || (*str == 32))
 		str++;
 	if ((*str == '+') || (*str == '-'))
-	{	
+	{
 		if (*str == '-')
 			sign = -sign;
 		str++;
@@ -29,6 +29,6 @@ int	ft_atoi(const char *str)
 	{
 		num = num * 10 + *str - 48;
 		str++;
-	}	
+	}
 	return (sign * num);
 }

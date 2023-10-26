@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_make_list.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 19:15:35 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/25 18:38:34 by cova             ###   ########.fr       */
+/*   Updated: 2023/10/26 18:41:42 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,9 @@ char	**ft_read_arg(int argc, char **argv)
 	i = 1;
 	while (i <= argc - 1)
 	{
-			str = ft_strjoin(str, argv[i]);
-			str = ft_strjoin(str, " ");
-			i++;
+		str = ft_strjoin(str, argv[i]);
+		str = ft_strjoin(str, " ");
+		i++;
 	}
 	readed = ft_split (str, ' ');
 	return (readed);

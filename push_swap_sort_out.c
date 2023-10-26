@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_sort_out.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:40:18 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/25 18:46:39 by cova             ###   ########.fr       */
+/*   Updated: 2023/10/26 19:53:37 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,12 @@ void	ft_sort5(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
+void	ft_big_sort(t_stack **a, t_stack **b)
+{
+	ft_up_or_down(a, b);
+	ft_sort3(a);
+}
+
 void	ft_sort_out(t_stack **stack_a, int nums)
 {
 	t_stack	**stack_b;
@@ -56,13 +62,10 @@ void	ft_sort_out(t_stack **stack_a, int nums)
 		ft_sort_2(stack_a);
 	else if (nums == 3)
 		ft_sort3(stack_a);
-	else if (nums > 3)
+	else if (nums < 6)
 		ft_sort5(stack_a, stack_b);
-	/* else
-	{
-		// programa de ordenacion completo
-		// ft_3tower(&stack_a, &stack_b);
-	} */	
+	else
+		ft_big_sort(stack_a, stack_b);
 	ft_free(stack_b);
-	ft_print_list(*stack_a);
+	//ft_print_list(*stack_a);
 }

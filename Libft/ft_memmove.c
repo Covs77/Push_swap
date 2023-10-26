@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 12:07:41 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/24 18:57:47 by cova             ###   ########.fr       */
+/*   Updated: 2023/10/26 18:43:57 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		while (pos < len)
 		{
-		dest[pos] = orig[pos];
-		pos++;
+			dest[pos] = orig[pos];
+			pos++;
 		}
 	}
 	return (dst);

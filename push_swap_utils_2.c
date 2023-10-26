@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils_2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 18:34:48 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/24 17:47:40 by cova             ###   ########.fr       */
+/*   Updated: 2023/10/26 20:23:08 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <limits.h>
 #include <unistd.h>
 
 void	ft_check_moves(t_stack *stack_a, t_stack *stack_b)
@@ -101,4 +102,16 @@ int	ft_back_order(t_stack *stack)
 			return (0);
 	}
 	return (1);
+}
+
+int	ft_max(t_stack *s, int max)
+{
+	
+	while (s != NULL)
+	{
+		if (max <= s->data)
+			max = s->data;
+		s = s->next;
+	}
+	return (max);
 }

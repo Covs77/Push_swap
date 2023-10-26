@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 19:31:50 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/25 18:39:06 by cova             ###   ########.fr       */
+/*   Updated: 2023/10/26 19:50:01 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_stack	*ft_lst_last(t_stack *lst)
 		if (lst->next == NULL)
 			return (lst);
 		lst = lst->next;
-	}	
+	}
 	return (lst);
 }
 

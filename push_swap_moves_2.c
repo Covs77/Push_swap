@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_moves_2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 18:59:47 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/25 18:13:56 by cova             ###   ########.fr       */
+/*   Updated: 2023/10/26 18:47:13 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,11 @@
 	}
 } */
 
-void ft_on_top(t_stack **s, int counter)
+void	ft_on_top(t_stack **s, int counter)
 {
-	int len;
+	int	len;
 
-	
-	len = (ft_len_list(*s)/2);
+	len = (ft_len_list(*s) / 2);
 	if (counter >= len)
 	{
 		rotate(s);
@@ -44,8 +43,8 @@ void ft_on_top(t_stack **s, int counter)
 	{
 		interchange(s);
 		write(1, "sa\n", 3);
-	}	
-	else 
+	}
+	else
 	{
 		to_last(s);
 		write(1, "ra\n", 3);
@@ -53,18 +52,18 @@ void ft_on_top(t_stack **s, int counter)
 }
 
 //funcion que pone el menor encima del stack (hasta 5 elementos)
-void 	ft_min_to_top(t_stack **stack)
+void	ft_min_to_top(t_stack **stack)
 {
-	int min;
+	int		min;
 	t_stack	*pointer;
-	int contador;
-	
+	int		contador;
+
 	min = ft_min(*stack);
 	contador = 0;
 	pointer = *stack;
 	if (pointer->data == min)
 		return ;
-	else 
+	else
 	{
 		while (pointer->data != min)
 		{
@@ -74,8 +73,7 @@ void 	ft_min_to_top(t_stack **stack)
 			{
 				ft_on_top(stack, contador);
 				pointer = *stack;
-			}	
+			}
 		}
 	}
 }
-	
