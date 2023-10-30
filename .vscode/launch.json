@@ -5,9 +5,9 @@
       "name": "C/C++ Runner: Debug Session",
       "type": "lldb",
       "request": "launch",
-      "args": [],
+      "args": ["4", "3", "5", "2","43","1"],
       "cwd": "/Users/cleguina/Documents/CURSUS/push_swap",
-      "program": "/Users/cleguina/Documents/CURSUS/push_swap/build/Debug/outDebug"
+      "program": "/Users/cleguina/Documents/CURSUS/push_swap",
     }
   ]
 }

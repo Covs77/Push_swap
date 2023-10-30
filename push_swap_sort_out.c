@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:40:18 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/26 19:53:37 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/10/30 21:42:07 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	ft_sort5(t_stack **stack_a, t_stack **stack_b)
 		return ;
 	*stack_b = NULL;
 	ft_3tower (stack_a, stack_b);
+	ft_print_list(*stack_a);
+	ft_print_list(*stack_b);
 	ft_sort3(stack_a);
 	while (*stack_b)
 	{
@@ -67,5 +69,4 @@ void	ft_sort_out(t_stack **stack_a, int nums)
 	else
 		ft_big_sort(stack_a, stack_b);
 	ft_free(stack_b);
-	//ft_print_list(*stack_a);
 }

@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 18:34:48 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/26 20:23:08 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/10/30 21:42:09 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,22 @@ void	ft_check_moves(t_stack *stack_a, t_stack *stack_b)
 // devuelve el valor medio
 int	ft_medium(t_stack *stack)
 {
-	int	max;
+	int	sum;
+	int total;
+	int medio;
 
-	max = 0;
+	sum = 0;
+	total = 0;
+	medio = 0;
 	while (stack != NULL)
 	{
-		if (max < stack->data)
-			max = stack->data;
+		sum = sum + stack->data;
 		stack = stack->next;
 	}
-	return (max / 2);
+	total = ft_len_list(stack);
+	medio = sum / total;
+	printf ("medio: %d\n", medio);
+	return (medio);
 }
 
 int	ft_min(t_stack *stack)

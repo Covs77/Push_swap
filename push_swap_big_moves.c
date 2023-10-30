@@ -6,16 +6,13 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 19:33:42 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/26 20:36:29 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/10/30 21:26:39 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <limits.h>
 #include <unistd.h>
-
-
-
 
 int ft_max3(t_stack *s)
 {
@@ -55,8 +52,7 @@ void	ft_up_or_down(t_stack **a, t_stack **b)
 	int max;
 
 	max = ft_max3(*a);
-	printf("max: %d\n", max);
-	/* while (((*a)->data < max) && a && *a)
+	while (((*a)->data < max) && a && *a)
 	{
 		if ((*a)->data > ft_medium(*a))
 		{
@@ -70,9 +66,9 @@ void	ft_up_or_down(t_stack **a, t_stack **b)
 			push(a, b);
 			write(1, "pb\n", 3);
 		}
-		ft_print_list(*a);
-		ft_print_list(*b);
-	} */
-	ft_print_list(*a);
-	ft_print_list(*b);
+		//ft_print_list(*a);
+		//ft_print_list(*b);
+	} 
+	//ft_print_list(*a);
+	//ft_print_list(*b);
 }

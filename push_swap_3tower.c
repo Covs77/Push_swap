@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:22:09 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/26 18:50:27 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/10/30 21:37:08 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_3tower(t_stack **stack_origin, t_stack **stack_dest)
 
 void	ft_sort3(t_stack **stack)
 {
+	ft_print_list(*stack);
 	while (ft_order(*stack) == 0)
 	{
 		if ((*stack)->data > (*stack)->next->data)
@@ -42,13 +43,14 @@ void	ft_sort3(t_stack **stack)
 			to_last(stack);
 			write(1, "ra\n", 3);
 		}
-		else if ((*stack)->next-> data > (ft_lst_last(*stack)-> data))
+		else if ((*stack)->next->data > (ft_lst_last(*stack)->data))
 		{
 			rotate(stack);
 			write(1, "rra\n", 4);
 		}
-		//ft_print_list(*stack);
+	
 	}
+	
 }
 
 void	ft_sort_2(t_stack **s)

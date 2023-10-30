@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 19:29:21 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/26 20:57:18 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/10/30 21:40:05 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		str = ft_read_arg(argc, argv);
+		
 		error = ft_check_inputs(str);
 		if (error == 1)
 		{
@@ -32,9 +33,11 @@ int	main(int argc, char **argv)
 			return (0);
 		}
 		stack_a = ft_make_list(str);
+		ft_get_pos (stack_a, str);
 		ft_sort_out(stack_a, argc);
+		ft_print_list(*stack_a);
 	}
-	ft_error(error);
+		ft_error(error);
 	ft_free(stack_a);
 	return (0);
 }

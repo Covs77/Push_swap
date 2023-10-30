@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 19:31:50 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/26 19:50:01 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/10/30 21:40:27 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void	ft_print_list(t_stack *stack)
 	printf ("\nLista :");
 	while (stack != NULL)
 	{
-		printf ("%d - ", stack->data);
+		printf ("%d", stack->data);
+		printf ("(%d) ", stack->pos);
 		stack = stack->next;
 	}
 	printf("\n");
@@ -49,16 +50,31 @@ t_stack	*ft_lst_last(t_stack *lst)
 	return (lst);
 }
 
-///borro 1ª nodo
-/* t_stack	*ft_delete_first(t_stack *lista)
+void ft_bubble_sort(char **str)
 {
-	t_stack	*aux;
+	int	i;
+	int	j;
+	char *aux;
 
-	aux = lista;
-	lista = lista->next;
-	free(aux);
-	return (lista);
-} */
+	i = 0;
+	while (str[i] != NULL)
+	{
+		j = i + 1;
+		while (str[j] != NULL)
+		{
+			if (ft_atoi(str[i]) > ft_atoi(str[j]))
+			{
+				aux = str[j];
+				str[j] = str[i];
+				str[i] = aux;
+			}
+			j++;
+			
+		}
+		i++;
+	}
+	
+}
 
 /// Añado el 1 al fin. Localizo ultimo nodo, hago q apunte al nuevo
 

@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 19:15:35 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/26 18:41:42 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/10/30 21:16:58 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_new_nodo(t_stack **stack, int valor)
 		return ;
 	new_nodo->data = valor;
 	new_nodo->next = NULL;
+	//new_nodo->pos = 0;
 	aux = NULL;
 	if (*stack == NULL)
 		*stack = new_nodo;
@@ -79,4 +80,32 @@ char	**ft_read_arg(int argc, char **argv)
 	}
 	readed = ft_split (str, ' ');
 	return (readed);
+}
+
+// Almaceno la posicion final de cada nodo
+
+void ft_get_pos(t_stack **s, char **str)
+{
+	int		i;
+	t_stack	*aux;
+	
+	i = 0;
+	aux = *s;
+	
+	ft_bubble_sort(str);
+	while (aux != NULL)
+	{
+		while (str[i] && aux)
+		{
+			if (aux->data == ft_atoi(str[i]))
+			{
+				aux->pos = i;
+				i++;
+				aux = aux->next;
+			}
+			else
+				i++;
+		}
+		i = 0;
+	}
 }
