@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 19:31:50 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/30 21:40:27 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:28:36 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ int	ft_len_list(t_stack	*stack)
 
 void	ft_print_list(t_stack *stack)
 {
-	printf ("\nLista :");
+	printf ("\nLista :\n");
 	while (stack != NULL)
 	{
-		printf ("%d", stack->data);
-		printf ("(%d) ", stack->pos);
+		printf ("%d ", stack->data);
+		printf ("(pos %d)", stack->pos);
+		printf ("(coste %d)\n ", stack->cost_b);
 		stack = stack->next;
 	}
 	printf("\n");

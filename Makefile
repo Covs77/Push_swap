@@ -26,7 +26,7 @@ LIBFT = $(LIBFT_DIR)/libft.a
 SRC = push_swap.c push_swap_check_input.c push_swap_make_list.c push_swap_utils.c\
 push_swap_moves.c push_swap_3tower.c push_swap_sort_out.c\
 push_swap_generic_moves.c push_swap_moves_2.c push_swap_utils_2.c \
-push_swap_big_moves.c
+push_swap_big_moves.c push_swap_costs.c 
 
 	
 # Define los archivos objeto generados a partir de los fuente

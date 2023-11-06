@@ -6,28 +6,12 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 18:59:47 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/26 18:47:13 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/06 19:13:55 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <unistd.h>
-
-/* void	ft_move_max(t_stack **s, t_stack **dest)
-{
-	if ((*s)->data > (*s)->next->data)
-	{
-		push (s, dest);
-		write(1, "pa\n", 3);
-	}
-	else
-	{
-		interchange(s);
-		write(1, "sb\n", 3);
-		push (s, dest);
-		write(1, "pa\n", 3);
-	}
-} */
 
 void	ft_on_top(t_stack **s, int counter)
 {
@@ -76,4 +60,18 @@ void	ft_min_to_top(t_stack **stack)
 			}
 		}
 	}
+}
+
+void rr (t_stack **a, t_stack **b)
+{
+	to_last(a);
+	to_last(b);
+	write(1, "rr\n", 3);
+}
+
+void rrr (t_stack **a, t_stack **b)
+{
+	rotate(a);
+	rotate(b);
+	write(1, "rrr\n", 4);
 }

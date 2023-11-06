@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:22:09 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/30 21:37:08 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:38:48 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	ft_3tower(t_stack **stack_origin, t_stack **stack_dest)
 
 void	ft_sort3(t_stack **stack)
 {
-	ft_print_list(*stack);
 	while (ft_order(*stack) == 0)
 	{
 		if ((*stack)->data > (*stack)->next->data)

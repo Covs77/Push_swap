@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:40:18 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/30 21:42:07 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:45:23 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ void	ft_big_sort(t_stack **a, t_stack **b)
 {
 	ft_up_or_down(a, b);
 	ft_sort3(a);
+	ft_print_list(*a);
+	ft_print_list(*b);
+	ft_sort(a,b);
 }
 
 void	ft_sort_out(t_stack **stack_a, int nums)
@@ -59,14 +62,23 @@ void	ft_sort_out(t_stack **stack_a, int nums)
 	stack_b = (t_stack **)malloc(sizeof(t_stack *));
 	if (!stack_b)
 		return ;
-	stack_b = NULL;
+	*stack_b = NULL;
 	if (nums == 2)
 		ft_sort_2(stack_a);
 	else if (nums == 3)
 		ft_sort3(stack_a);
-	else if (nums < 6)
+	else if (nums <= 5)
 		ft_sort5(stack_a, stack_b);
 	else
 		ft_big_sort(stack_a, stack_b);
 	ft_free(stack_b);
+}
+
+void	ft_sort(t_stack **a, t_stack **b)
+{
+
+	ft_cost_b(b);
+	ft_print_list(*b);
+	ft_print_list(*a);
+	
 }

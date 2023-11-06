@@ -1,42 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_costs.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 19:29:21 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/02 19:39:25 by cleguina         ###   ########.fr       */
+/*   Created: 2023/11/06 19:16:00 by cleguina          #+#    #+#             */
+/*   Updated: 2023/11/06 20:49:21 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int ft_midi_list (t_stack *s)
 {
-	t_stack	**stack_a;
-	char	**str;
-	int		error;
+	return (ft_len_list(s) / 2);
+}
 
-	error = 1;
-	stack_a = NULL;
-	if (argc > 1)
+
+/// NO CALCULA BIEN LOS COSTES!!!! DEBE SER DECRECIENTE
+// SIENDO 0 EL DE ABAJO.
+void ft_cost_b(t_stack **b)
+{
+	int i;
+	int midi;
+	t_stack *aux;
+
+	aux = *b;
+	i = 0;
+	midi = 0;
+	midi = ft_midi_list(*b);
+	printf ("Midi. %d", midi);
+	while (aux)
 	{
-		str = ft_read_arg(argc, argv);
-		
-		error = ft_check_inputs(str);
-		if (error == 1)
+		if (i <= midi)
 		{
-			ft_error(error);
-			return (0);
+			aux->cost_b = i;
+			i++;
 		}
-		stack_a = ft_make_list(str);
-		ft_get_pos(stack_a, str);
-		ft_sort_out(stack_a, argc);
-	}
-		ft_error(error);
-	ft_free(stack_a);
-	return (0);
+		else
+		{
+			aux->cost_b = i * - 1;
+			i++;;
+		}
+		aux = aux->next;
+	} 
+	
 }

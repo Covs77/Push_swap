@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 18:46:56 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/30 19:59:07 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/06 19:50:08 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ typedef struct s_stack
 {
 	int				data;
 	int				pos;
+	int 			cost_a;
+	int 			cost_b;	
+	int				cost;
 	struct s_stack	*next;
 }
 					t_stack;
@@ -62,5 +65,11 @@ void	ft_up_or_down(t_stack **a, t_stack **b);
 int		ft_max(t_stack *s, int max);
 void	ft_get_pos (t_stack **s, char **str);
 void	ft_bubble_sort(char **str);
+void	ft_cost(t_stack **a, t_stack **b);
+void	ft_sort(t_stack **a, t_stack **b);
+void	rrr(t_stack **a, t_stack **b);
+void	rr(t_stack **a, t_stack **b);
+void	ft_cost_b(t_stack **b);
+int		ft_midi_list (t_stack *s);
 
 #endif
