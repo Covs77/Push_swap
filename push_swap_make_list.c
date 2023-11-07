@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_make_list.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 19:15:35 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/06 19:32:46 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/07 17:42:00 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,14 +86,13 @@ char	**ft_read_arg(int argc, char **argv)
 
 // Almaceno la posicion final de cada nodo
 
-void ft_get_pos(t_stack **s, char **str)
+void	ft_get_pos(t_stack **s, char **str)
 {
 	int		i;
 	t_stack	*aux;
-	
+
 	i = 0;
 	aux = *s;
-	
 	ft_bubble_sort(str);
 	while (aux != NULL)
 	{

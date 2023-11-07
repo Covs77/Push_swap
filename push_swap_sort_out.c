@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_sort_out.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:40:18 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/06 20:45:23 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/07 17:37:32 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_big_sort(t_stack **a, t_stack **b)
 	ft_sort3(a);
 	ft_print_list(*a);
 	ft_print_list(*b);
-	ft_sort(a,b);
+	ft_sort(a, b);
 }
 
 void	ft_sort_out(t_stack **stack_a, int nums)
@@ -76,9 +76,7 @@ void	ft_sort_out(t_stack **stack_a, int nums)
 
 void	ft_sort(t_stack **a, t_stack **b)
 {
-
 	ft_cost_b(b);
 	ft_print_list(*b);
 	ft_print_list(*a);
-	
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 19:31:50 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/06 20:28:36 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:00:14 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,7 @@ int	ft_len_list(t_stack	*stack)
 	return (i);
 }
 
-void	ft_print_list(t_stack *stack)
-{
-	printf ("\nLista :\n");
-	while (stack != NULL)
-	{
-		printf ("%d ", stack->data);
-		printf ("(pos %d)", stack->pos);
-		printf ("(coste %d)\n ", stack->cost_b);
-		stack = stack->next;
-	}
-	printf("\n");
-}
+
 
 t_stack	*ft_lst_last(t_stack *lst)
 {
@@ -51,11 +40,11 @@ t_stack	*ft_lst_last(t_stack *lst)
 	return (lst);
 }
 
-void ft_bubble_sort(char **str)
+void	ft_bubble_sort(char **str)
 {
-	int	i;
-	int	j;
-	char *aux;
+	int		i;
+	int		j;
+	char	*aux;
 
 	i = 0;
 	while (str[i] != NULL)
@@ -70,11 +59,9 @@ void ft_bubble_sort(char **str)
 				str[i] = aux;
 			}
 			j++;
-			
 		}
 		i++;
 	}
-	
 }
 
 /// Añado el 1 al fin. Localizo ultimo nodo, hago q apunte al nuevo

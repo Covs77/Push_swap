@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 18:46:56 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/06 19:50:08 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:05:48 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,11 @@ typedef struct s_stack
 {
 	int				data;
 	int				pos;
-	int 			cost_a;
-	int 			cost_b;	
+	int				cost_a;
+	int				cost_b;	
 	int				cost;
 	struct s_stack	*next;
-}
-					t_stack;
-
+}					t_stack;
 int		ft_len_list(t_stack *stack);
 void	ft_print_list(t_stack *stack);
 t_stack	*ft_lst_last(t_stack *lst);
@@ -63,13 +61,14 @@ void	ft_free(t_stack **s);
 void	ft_big_sort(t_stack **stack_a, t_stack **stack_b);
 void	ft_up_or_down(t_stack **a, t_stack **b);
 int		ft_max(t_stack *s, int max);
-void	ft_get_pos (t_stack **s, char **str);
+void	ft_get_pos(t_stack **s, char **str);
 void	ft_bubble_sort(char **str);
 void	ft_cost(t_stack **a, t_stack **b);
 void	ft_sort(t_stack **a, t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
 void	rr(t_stack **a, t_stack **b);
 void	ft_cost_b(t_stack **b);
-int		ft_midi_list (t_stack *s);
+int		ft_midi_list(t_stack *s);
+void	moves(t_stack **a, t_stack **b, char *move);
 
 #endif

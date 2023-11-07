@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 19:29:21 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/02 19:39:25 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/07 17:53:38 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		str = ft_read_arg(argc, argv);
-		
 		error = ft_check_inputs(str);
 		if (error == 1)
 		{
@@ -36,7 +35,7 @@ int	main(int argc, char **argv)
 		ft_get_pos(stack_a, str);
 		ft_sort_out(stack_a, argc);
 	}
-		ft_error(error);
+	ft_error(error);
 	ft_free(stack_a);
 	return (0);
 }
