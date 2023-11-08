@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_big_moves.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 19:33:42 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/07 18:12:26 by cova             ###   ########.fr       */
+/*   Updated: 2023/11/08 18:34:34 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,27 @@
 #include <limits.h>
 #include <unistd.h>
 
-int	ft_max3(t_stack *s)
+void move_interchange(t_stack **a, t_stack **b, char *move)
 {
-	int		max_1;
-	int		max_2;
-	int		max_3;
-
-	max_1 = INT_MIN;
-	max_2 = INT_MIN;
-	max_3 = INT_MIN;
-	while (s != NULL)
+	if (ft_strcmp (move, "sa") == 0)
 	{
-		if (s->data > max_1)
-		{
-			max_3 = max_2;
-			max_2 = max_1;
-			max_1 = s->data;
-		}
-		else if (s->data > max_2)
-		{
-			max_3 = max_2;
-			max_2 = s->data;
-		}
-		else if (s->data > max_3)
-			max_3 = s->data;
-		s = s->next;
+		interchange(a);
+		write(1, "sa\n", 3);
 	}
-	return (max_3);
+	if (ft_strcmp (move, "sb") == 0)
+	{
+		interchange(b);
+		write(1, "sb\n", 3);
+	}
+	if (ft_strcmp (move, "ss") == 0)
+	{
+		interchange(a);
+		interchange(b);
+		write(1, "ss\n", 3);
+	}
 }
 
-/// se sigue yendo de líneas. 
-
-/* void	moves(t_stack **a, t_stack **b, char *move)
+void	move_to_last(t_stack **a, t_stack **b, char *move)
 {
 	if (ft_strcmp (move, "ra") == 0)
 	{
@@ -63,38 +52,50 @@ int	ft_max3(t_stack *s)
 		to_last(b);
 		write(1, "rr\n", 3);
 	}
-	if (ft_strcmp(move, "rra"))
-	{	rotate(a);
+}
+
+void move_rotate (t_stack **a, t_stack **b, char *move)
+{
+	if (ft_strcmp (move, "rra") == 0)
+	{
+		rotate(a);
 		write(1, "rra\n", 4);
 	}
-	if (ft_strcmp(move, "rrb"))
-	{	rotate(b);
+	if (ft_strcmp (move, "rrb") == 0)
+	{
+		rotate(b);
 		write(1, "rrb\n", 4);
 	}
-} */
+	if (ft_strcmp (move, "rrr") == 0)
+	{
+		rotate(a);
+		rotate(b);
+		write(1, "rrr\n", 4);
+	}
+}
+
 
 
 void	ft_up_or_down(t_stack **a, t_stack **b)
 {
 	int	medium;
+	int	max3;
 
 	medium = ft_len_list(*a) / 2;
+	max3 = ft_len_list(*a) - 4;
 	while (ft_len_list(*a) > 3)
 	{
-		if ((*a)->data >= ft_max3(*a))
+		if ((*a)->pos > max3)
 		{
-			to_last(a);
-			write(1, "ra\n", 3);
+			move_to_last(a, b, "ra");
 		}
 		else if ((*a)->pos >= medium)
 		{
 			push(a, b);
 			write(1, "pb\n", 3);
 			if ((*b)->next && (*b)->pos > (*b)->next->pos)
-			{
-				to_last(b);
-				write(1, "rb\n", 3);
-			}
+				move_to_last(a, b, "rb");
+				
 		}
 		else
 		{
@@ -103,5 +104,3 @@ void	ft_up_or_down(t_stack **a, t_stack **b)
 		}
 	}
 }
-
-

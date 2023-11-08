@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:47:22 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/26 18:47:23 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/08 21:14:34 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,23 @@ int	ft_check_num(char **str)
 	error = 0;
 	i = 0;
 	j = 0;
+	if (!str[i])
+		return (1);
 	while (str[i])
 	{
 		while (str[i][j] != '\0')
 		{
+			if (j == 0 && (str[i][j] == '-' || str[i][j] == '+'))
+				j++;
 			error = ft_isdigit(str[i][j]);
+			if (error == 1)
+				return (1);
 			j++;
 		}
-		if (error == 0)
-		{
-			i++;
-			j = 0;
-		}
-		else
-			return (1);
+		i++;
+		j = 0;
 	}
-	return (0);
+	return (error);
 }
 
 int	ft_check_repe(char **str)

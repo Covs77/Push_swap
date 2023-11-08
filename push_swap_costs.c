@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_costs.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:16:00 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/07 17:53:14 by cova             ###   ########.fr       */
+/*   Updated: 2023/11/08 18:53:21 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,18 @@ void	ft_cost_b(t_stack **b)
 	aux = *b;
 	i = 0;
 	midi = 0;
+	j = 0;
 	midi = ft_midi_list(*b);
-	j = midi -1;
+	if (ft_len_list(*b) % 2 != 0)
+		j = midi - 1;
+	else 
+		j = midi; 
 	while (aux)
 	{
-		if (i <= midi)
+		if (i++ < midi)
 		{
 			aux->cost_b = i;
-			i++;
+			//i++;
 		}
 		else
 		{

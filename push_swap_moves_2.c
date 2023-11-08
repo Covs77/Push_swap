@@ -3,75 +3,66 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_moves_2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 18:59:47 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/07 17:38:15 by cova             ###   ########.fr       */
+/*   Created: 2023/09/26 19:22:05 by cleguina          #+#    #+#             */
+/*   Updated: 2023/11/08 18:37:13 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <unistd.h>
 
-void	ft_on_top(t_stack **s, int counter)
+/* /// ROTAMOS LA LISTA, EL 1º PASA A SER EL ÚLIMO
+t_stack	*ra(t_stack *stack)
 {
-	int	len;
+	t_stack	*aux;
+	int		len;
 
-	len = (ft_len_list(*s) / 2);
-	if (counter >= len)
-	{
-		rotate(s);
-		write(1, "rra\n", 4);
-	}
-	else if (counter == 1)
-	{
-		interchange(s);
-		write(1, "sa\n", 3);
-	}
-	else
-	{
-		to_last(s);
-		write(1, "ra\n", 3);
-	}
+	len = ft_len_list(stack);
+	if (len < 2)
+		return (stack);
+	aux = stack;
+	stack = stack->next;
+	ft_add_back (stack, aux);
+	return (stack);
 }
 
-//funcion que pone el menor encima del stack (hasta 5 elementos)
-void	ft_min_to_top(t_stack **stack)
+// ROTO EL ÚLTIMO AL PRIMERO. (t_stack	*ft_lst_last(t_stack *lst))
+t_stack	*rra(t_stack *stack)
 {
-	int		min;
-	t_stack	*pointer;
-	int		contador;
+	t_stack	*penultimo;
+	t_stack	*fin;
+	int		len;
+	int		i;
 
-	min = ft_min(*stack);
-	contador = 0;
-	pointer = *stack;
-	if (pointer->data == min)
-		return ;
-	else
+	len = ft_len_list(stack);
+	if (len < 2)
+		return (stack);
+	i = 1;
+	penultimo = stack;
+	while (i < (len - 1))
 	{
-		while (pointer->data != min)
-		{
-			pointer = pointer->next;
-			contador++;
-			if (pointer->data == min)
-			{
-				ft_on_top(stack, contador);
-				pointer = *stack;
-			}
-		}
+		penultimo = penultimo->next;
+		i++;
 	}
+	fin = ft_lst_last(stack);
+	fin->next = stack;
+	penultimo->next = NULL;
+	stack = fin;
+	return (stack);
 }
 
-void	rr(t_stack **a, t_stack **b)
+t_stack	*sa(t_stack *stack)
 {
-	to_last(a);
-	to_last(b);
-	write(1, "rr\n", 3);
-}
+	int		len;
+	t_stack	*tmp;
 
-void	rrr(t_stack **a, t_stack **b)
-{
-	rotate(a);
-	rotate(b);
-	write(1, "rrr\n", 4);
-}
+	len = ft_len_list(stack);
+	if (len < 2)
+		return (stack);
+	tmp = stack->next;
+	stack->next = stack->next->next;
+	tmp->next = stack;
+	stack = tmp;
+	return (stack);
+} */

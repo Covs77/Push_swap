@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_checker.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:59:01 by cova              #+#    #+#             */
-/*   Updated: 2023/11/07 18:09:45 by cova             ###   ########.fr       */
+/*   Updated: 2023/11/08 18:14:15 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@
 	//printf("Stack_b tras pa:");
 	//ft_print_list(stack_b);
 } */
-
-
 
 void	ft_print_list(t_stack *stack)
 {

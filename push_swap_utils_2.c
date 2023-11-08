@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils_2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 18:34:48 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/07 17:58:17 by cova             ###   ########.fr       */
+/*   Updated: 2023/11/08 18:13:23 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <limits.h>
 #include <unistd.h>
-
-
 
 // devuelve el valor medio
 int	ft_medium(t_stack *stack)
@@ -84,7 +82,6 @@ int	ft_back_order(t_stack *stack)
 
 int	ft_max(t_stack *s, int max)
 {
-	
 	while (s != NULL)
 	{
 		if (max <= s->data)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_sort_out.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:40:18 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/07 17:37:32 by cova             ###   ########.fr       */
+/*   Updated: 2023/11/08 18:28:32 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,10 @@ void	ft_sort5(t_stack **stack_a, t_stack **stack_b)
 	{
 		if ((*stack_b)->data > (*stack_a)->data)
 		{
-			to_last(stack_a);
-			write(1, "ra\n", 3);
+			move_to_last(stack_a, stack_b, "ra");
 			push(stack_b, stack_a);
 			write(1, "pa\n", 3);
-			rotate(stack_a);
-			write(1, "rra\n", 4);
+			move_rotate(stack_a, NULL, "rra");
 		}
 		else
 		{
@@ -49,8 +47,8 @@ void	ft_big_sort(t_stack **a, t_stack **b)
 {
 	ft_up_or_down(a, b);
 	ft_sort3(a);
-	ft_print_list(*a);
-	ft_print_list(*b);
+	//ft_print_list(*a);
+	//ft_print_list(*b);
 	ft_sort(a, b);
 }
 

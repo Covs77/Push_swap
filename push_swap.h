@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 18:46:56 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/07 18:05:48 by cova             ###   ########.fr       */
+/*   Updated: 2023/11/08 18:28:01 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ void	rrr(t_stack **a, t_stack **b);
 void	rr(t_stack **a, t_stack **b);
 void	ft_cost_b(t_stack **b);
 int		ft_midi_list(t_stack *s);
-void	moves(t_stack **a, t_stack **b, char *move);
+void	move_to_last(t_stack **a, t_stack **b, char *move);
+void	move_interchange(t_stack **a, t_stack **b, char *move);
+void	move_rotate (t_stack **a, t_stack **b, char *move);
 
 #endif
