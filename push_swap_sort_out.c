@@ -6,7 +6,7 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:40:18 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/12 14:13:18 by cova             ###   ########.fr       */
+/*   Updated: 2023/11/12 18:09:25 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ void	ft_big_sort(t_stack **a, t_stack **b)
 {
 	ft_up_or_down(a, b);
 	ft_sort3(a);
-	//ft_print_list(*a);
-	//ft_print_list(*b);
 	ft_sort(a, b);
 }
 
@@ -84,20 +82,24 @@ void	ft_sort(t_stack **a, t_stack **b)
 		to_move = ft_find_hole(a, (*b)->pos);
 		if ((abs((*b)->cost_a + (*b)->cost_b)) == min)
 		{
+			printf("A (big sort):\n");
+			ft_print_list(*a);
+			ft_sort_on_top(a, to_move);
 			push(b, a);
 			write(1, "pa\n", 3);
-			printf("Posicion to move: %d\n", to_move);	
-			printf("total coste: %d\n", (*b)->cost_a + (*b)->cost_b);
+			printf("A:\n");
+			ft_print_list(*a);
+			printf("B:\n");
+			ft_print_list(*b);
 			
 			//ordenalo
 		}
 		else
 			min++;
-		*b = (*b)->next;
 		
 	}
-	printf("A:\n");
+/* 	printf("A:\n");
 	ft_print_list(*a);
 	printf("B:\n");
-	ft_print_list(*b);
+	ft_print_list(*b); */
 }

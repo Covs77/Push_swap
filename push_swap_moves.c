@@ -6,7 +6,7 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 18:59:47 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/12 12:41:35 by cova             ###   ########.fr       */
+/*   Updated: 2023/11/12 18:12:38 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_on_top(t_stack **s, int counter)
 	else
 		move_to_last(s, NULL, "ra");
 		
-}
+} 
 
 //funcion que pone el menor encima del stack (hasta 5 elementos)
 void	ft_min_to_top(t_stack **stack)
@@ -55,4 +55,16 @@ void	ft_min_to_top(t_stack **stack)
 	}
 }
 
+void	ft_sort_top(t_stack **s, int pos)
+{
+	t_stack *aux;
+
+	aux = *s;
+	while (aux->pos != pos)
+		aux = aux->next;
+	// colocar el nodo aarriba , sobre el que haré el push.
+
+	//if (aux->cost_a < 0)
+	//	move_rotate(s, NULL, "rra");
+} 
 

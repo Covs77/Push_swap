@@ -6,7 +6,7 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 18:46:56 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/12 13:13:16 by cova             ###   ########.fr       */
+/*   Updated: 2023/11/12 18:09:06 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void	move_to_last(t_stack **a, t_stack **b, char *move);
 void	move_interchange(t_stack **a, t_stack **b, char *move);
 void	move_rotate (t_stack **a, t_stack **b, char *move);
 int 	ft_find_hole(t_stack **a, int pos);
+void	ft_sort_top(t_stack **s, int pos);
 
 
 #endif
