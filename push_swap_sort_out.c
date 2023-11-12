@@ -3,18 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_sort_out.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:40:18 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/08 18:28:32 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/12 14:13:18 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <unistd.h>
-
-//No ordena bien la pila de 5, no chequea la entrada del segundo elemento de B
-// para eso tendría que mover forzosamente los menores de A siempre.
 
 void	ft_sort5(t_stack **stack_a, t_stack **stack_b)
 {
@@ -74,7 +71,33 @@ void	ft_sort_out(t_stack **stack_a, int nums)
 
 void	ft_sort(t_stack **a, t_stack **b)
 {
+	int		to_move;	
+	int		min;	
+	
 	ft_cost_b(b);
-	ft_print_list(*b);
+	min = 0;
+	///debo calcular el coste de mover un elemento a A
+	// pero en la posicion adecuada.
+	while (*b && (*b)->next)
+	{
+		ft_cost_a(a);
+		to_move = ft_find_hole(a, (*b)->pos);
+		if ((abs((*b)->cost_a + (*b)->cost_b)) == min)
+		{
+			push(b, a);
+			write(1, "pa\n", 3);
+			printf("Posicion to move: %d\n", to_move);	
+			printf("total coste: %d\n", (*b)->cost_a + (*b)->cost_b);
+			
+			//ordenalo
+		}
+		else
+			min++;
+		*b = (*b)->next;
+		
+	}
+	printf("A:\n");
 	ft_print_list(*a);
+	printf("B:\n");
+	ft_print_list(*b);
 }

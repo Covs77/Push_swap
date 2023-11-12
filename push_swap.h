@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 18:46:56 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/08 18:28:01 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/12 13:13:16 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,12 @@ void	ft_sort(t_stack **a, t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
 void	rr(t_stack **a, t_stack **b);
 void	ft_cost_b(t_stack **b);
+void	ft_cost_a(t_stack **a);
 int		ft_midi_list(t_stack *s);
 void	move_to_last(t_stack **a, t_stack **b, char *move);
 void	move_interchange(t_stack **a, t_stack **b, char *move);
 void	move_rotate (t_stack **a, t_stack **b, char *move);
+int 	ft_find_hole(t_stack **a, int pos);
+
 
 #endif

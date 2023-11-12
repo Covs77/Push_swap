@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_3tower.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:22:09 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/08 18:27:38 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/12 14:10:47 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	ft_3tower(t_stack **stack_origin, t_stack **stack_dest)
 {
 	while (ft_len_list(*stack_origin) > 3 && ft_order(*stack_origin) == 0)
 	{
-		ft_min_to_top(&(*stack_origin));
+		ft_min_to_top(stack_origin);
 		if (ft_order(*stack_origin) == 0)
 		{
-			push(&(*stack_origin), &(*stack_dest));
+			push(stack_origin, stack_dest);
 			write(1, "pb\n", 3);
 		}
 		else
@@ -30,14 +30,15 @@ void	ft_3tower(t_stack **stack_origin, t_stack **stack_dest)
 
 void	ft_sort3(t_stack **stack)
 {
-	while (ft_order(*stack) == 0)
+	
+	if ((*stack)->data > (*stack)->next->data)
+		move_interchange(stack, NULL, "sa");
+	if ((*stack)->data > ft_lst_last(*stack)->data)
+		move_rotate(stack, NULL, "rra");
+	else if (ft_order(*stack) == 0)
 	{
-		if ((*stack)->data > (*stack)->next->data)
-			move_interchange(stack, NULL, "sa");
-		else if ((*stack)->data > ((*stack)->next->data))
-			move_to_last(stack, NULL, "ra");
-		else if ((*stack)->next->data > (ft_lst_last(*stack)->data))
-			move_rotate(stack, NULL, "rra");
+		move_rotate(stack, NULL, "rra");
+		move_interchange(stack, NULL, "sa");
 	}
 }
 

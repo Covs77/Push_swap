@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils_2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 18:34:48 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/08 18:13:23 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/12 12:47:21 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_min(t_stack *stack)
 	return (min);
 }
 
-// COMPRUEBO SI LA LISTA ESTÁ ORDENADA, DEVUELVE 1 SI OK, 0 SI NO ESTÁ ORDENADA
+// DEVUELVE 1 SI OK, 0 SI NO ESTÁ ORDENADA
 int	ft_order(t_stack *stack)
 {
 	while (stack && stack->next)

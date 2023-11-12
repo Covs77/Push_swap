@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_checker.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:59:01 by cova              #+#    #+#             */
-/*   Updated: 2023/11/08 18:14:15 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/12 13:35:57 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,13 @@
 
 void	ft_print_list(t_stack *stack)
 {
-	printf ("\nLista :\n");
+//	printf ("\nLista :\n");
 	while (stack != NULL)
 	{
-		printf ("%d ", stack->data);
-		printf ("(pos %d)", stack->pos);
-		printf ("(coste %d)\n ", stack->cost_b);
+		printf ("\n%d ", stack->data);
+		printf ("(pos %d_", stack->pos);
+		printf ("(a) %d", stack->cost_a);
+		printf ("(b) %d)\n", stack->cost_b);
 		stack = stack->next;
 	}
 	printf("\n");
