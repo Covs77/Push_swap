@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils_2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 18:34:48 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/12 12:47:21 by cova             ###   ########.fr       */
+/*   Updated: 2023/11/13 19:05:16 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	ft_medium(t_stack *stack)
 	}
 	total = ft_len_list(stack);
 	medio = sum / total;
-	printf ("medio: %d\n", medio);
 	return (medio);
 }
 

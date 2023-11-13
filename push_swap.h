@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 18:46:56 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/12 18:09:06 by cova             ###   ########.fr       */
+/*   Updated: 2023/11/13 20:48:09 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 int		ft_len_list(t_stack *stack);
-void	ft_print_list(t_stack *stack);
+//void	ft_print_list(t_stack *stack);
 t_stack	*ft_lst_last(t_stack *lst);
 t_stack	*ft_delete_first(t_stack *lista);
 t_stack	*ft_add_back(t_stack *stack, t_stack *new);
@@ -74,7 +74,8 @@ void	move_to_last(t_stack **a, t_stack **b, char *move);
 void	move_interchange(t_stack **a, t_stack **b, char *move);
 void	move_rotate (t_stack **a, t_stack **b, char *move);
 int 	ft_find_hole(t_stack **a, int pos);
-void	ft_sort_top(t_stack **s, int pos);
-
+void	ft_sort_on_top(t_stack **s, int pos);
+void	ft_sort_on_top_both(t_stack **a, t_stack **b, int pos, int min);
+int		ft_find_lower_cost(t_stack *b);
 
 #endif

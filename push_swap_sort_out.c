@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_sort_out.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:40:18 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/12 18:09:25 by cova             ###   ########.fr       */
+/*   Updated: 2023/11/13 21:01:08 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void	ft_sort5(t_stack **stack_a, t_stack **stack_b)
 		return ;
 	*stack_b = NULL;
 	ft_3tower (stack_a, stack_b);
-	ft_print_list(*stack_a);
-	ft_print_list(*stack_b);
 	ft_sort3(stack_a);
 	while (*stack_b)
 	{
@@ -67,39 +65,38 @@ void	ft_sort_out(t_stack **stack_a, int nums)
 	ft_free(stack_b);
 }
 
+/// no ordena eficientemente, no chequeo cuál es 
+// el más barato
 void	ft_sort(t_stack **a, t_stack **b)
 {
-	int		to_move;	
-	int		min;	
+	int		to_move;
+	int		to_move_b;
+	int		min;
 	
-	ft_cost_b(b);
+	
 	min = 0;
-	///debo calcular el coste de mover un elemento a A
-	// pero en la posicion adecuada.
+	
 	while (*b && (*b)->next)
 	{
 		ft_cost_a(a);
+		ft_cost_b(b);
 		to_move = ft_find_hole(a, (*b)->pos);
-		if ((abs((*b)->cost_a + (*b)->cost_b)) == min)
-		{
-			printf("A (big sort):\n");
-			ft_print_list(*a);
-			ft_sort_on_top(a, to_move);
-			push(b, a);
-			write(1, "pa\n", 3);
-			printf("A:\n");
-			ft_print_list(*a);
-			printf("B:\n");
-			ft_print_list(*b);
-			
-			//ordenalo
-		}
-		else
-			min++;
-		
+	//	printf("to_move: %d\n", to_move);
+		to_move_b = ft_find_lower_cost(*b);
+		ft_sort_on_top_both(a, b, to_move, to_move_b);
+		push(b, a);
+		write(1, "pa\n", 3);
 	}
-/* 	printf("A:\n");
-	ft_print_list(*a);
-	printf("B:\n");
-	ft_print_list(*b); */
+	to_move = ft_find_hole(a, (*b)->pos);
+	ft_sort_on_top(a, to_move);
+	push(b, a);
+	write(1, "pa\n", 3);
+	ft_cost_a(a);
+	while ((*a)->pos != 0)
+	{
+		if ((*a)->cost > 0)
+			move_to_last(a, NULL, "ra");
+		else
+			move_rotate(a, NULL, "rra");
+	} 
 }

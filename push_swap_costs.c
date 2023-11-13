@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_costs.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:16:00 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/12 13:33:45 by cova             ###   ########.fr       */
+/*   Updated: 2023/11/13 19:06:20 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,26 +43,27 @@ void	ft_cost_b(t_stack **b)
 	}
 }
 
-
-// voy a buscar donde poner el nodo x de B en A
-// busco la posición cercana mas alta al que quiero mover.
 int ft_find_hole(t_stack **s, int pos)
 {
 	t_stack	*aux;
 	int i;
 	
 	i = pos+1;
+	
 	aux = *s;
-	while (aux != NULL)
+	while (aux->pos != i && aux != NULL && aux->next != NULL)
 	{
-		if(aux->pos != i)
+		while  (aux->pos != i && aux != NULL && aux->next != NULL)
+			aux = aux->next;
+		if (aux->pos == i)
+			return (i);
+		else
 			i++;
-		else 	
-			break;
-		aux = aux->next;
+			aux = *s;
 	}	
-	return (i-1);
+	return (i);
 }
+
 void	ft_cost_a(t_stack **a)
 {
 	int		i;
@@ -87,6 +88,4 @@ void	ft_cost_a(t_stack **a)
 			aux->cost_a = (j--) * -1;
 		aux = aux->next;
 	}
-	printf("A:");
-	ft_print_list(*a);
 }

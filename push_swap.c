@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 19:29:21 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/12 17:57:51 by cova             ###   ########.fr       */
+/*   Updated: 2023/11/13 19:14:42 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int	main(int argc, char **argv)
 	}
 	
 	ft_error(error);
-	printf ("ordenada");
-	ft_print_list(*stack_a);
+	//printf ("ordenada");
+	//ft_print_list(*stack_a);
 	ft_free(stack_a);
 	return (0);
 }
