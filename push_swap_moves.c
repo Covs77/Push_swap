@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 18:59:47 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/13 20:52:55 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/14 20:49:40 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,20 +92,27 @@ void	ft_sort_on_top_both(t_stack **a, t_stack **b, int pos_a, int pos_b)
 }
 
 
-int ft_find_lower_cost(t_stack *b)
+/// esto no lo hace bien!
+
+int ft_find_lower_cost(t_stack *a, t_stack *b)
 {
 	int min;
-	t_stack *aux;
+	t_stack *aux_b;
+	t_stack *aux_a;
 		
 	min = 0;
-	aux = b;
-	while ((abs(aux->cost_a) + (abs(aux->cost_b))) != min)
+	aux_b = b;
+	aux_a = a;
+	while ((abs(aux_a->cost_a) + (abs(aux_b->cost_b))) != min)
 	{
-		if (aux && aux->next)
-			aux = aux->next;
+		if (aux_a)
+			aux_a = aux_a->next;
 		else
+		{
 			min++;
-			aux = b;
+			aux_b = aux_b->next;
+			aux_a = a;
+		}
 	}
-	return (aux->pos);
+	return (aux_b->pos);
 }

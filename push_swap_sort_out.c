@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:40:18 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/13 21:01:08 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/14 20:48:51 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,12 @@ void	ft_sort(t_stack **a, t_stack **b)
 	{
 		ft_cost_a(a);
 		ft_cost_b(b);
-		to_move = ft_find_hole(a, (*b)->pos);
-	//	printf("to_move: %d\n", to_move);
-		to_move_b = ft_find_lower_cost(*b);
+		//ft_print_list(*a);
+		//ft_print_list(*b);
+		//	printf("to_move: %d\n", to_move);
+		to_move_b = ft_find_lower_cost(*a, *b);
+		// SEguro que esto va aqui?
+		to_move = ft_find_hole(a, (*b)->pos); 
 		ft_sort_on_top_both(a, b, to_move, to_move_b);
 		push(b, a);
 		write(1, "pa\n", 3);

@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 19:33:42 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/13 20:50:05 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/14 20:15:06 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,12 @@ void	ft_up_or_down(t_stack **a, t_stack **b)
 	{
 		if ((*a)->pos > max3)
 			move_to_last(a, b, "ra");
-		else if ((*a)->pos > medium)
+		else if ((*a)->pos < medium)
 		{
 			push(a, b);
 			write(1, "pb\n", 3);
-			//if ((*b)->next && (*b)->pos < (*b)->next->pos)
-			//	move_to_last(a, b, "rb");
+			if ((*b)->next && (*b)->pos < (*b)->next->pos)
+				move_to_last(a, b, "rb");
 		}
 		else
 		{
