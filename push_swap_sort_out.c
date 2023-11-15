@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:40:18 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/14 20:48:51 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/15 20:48:35 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,32 +69,26 @@ void	ft_sort_out(t_stack **stack_a, int nums)
 // el más barato
 void	ft_sort(t_stack **a, t_stack **b)
 {
-	int		to_move;
+	int		to_move_a;
 	int		to_move_b;
 	int		min;
 	
 	
 	min = 0;
 	
-	while (*b && (*b)->next)
+	while (*b)
 	{
 		ft_cost_a(a);
 		ft_cost_b(b);
-		//ft_print_list(*a);
-		//ft_print_list(*b);
-		//	printf("to_move: %d\n", to_move);
+		//ft_print_list(*a); 
+		//ft_print_list(*b); 
 		to_move_b = ft_find_lower_cost(*a, *b);
-		// SEguro que esto va aqui?
-		to_move = ft_find_hole(a, (*b)->pos); 
-		ft_sort_on_top_both(a, b, to_move, to_move_b);
+		to_move_a = ft_find_hole(*a, (*b)->pos);
+		ft_sort_on_top_both(a, b, to_move_a, to_move_b);
 		push(b, a);
 		write(1, "pa\n", 3);
+		
 	}
-	to_move = ft_find_hole(a, (*b)->pos);
-	ft_sort_on_top(a, to_move);
-	push(b, a);
-	write(1, "pa\n", 3);
-	ft_cost_a(a);
 	while ((*a)->pos != 0)
 	{
 		if ((*a)->cost > 0)
@@ -102,4 +96,6 @@ void	ft_sort(t_stack **a, t_stack **b)
 		else
 			move_rotate(a, NULL, "rra");
 	} 
+	//printf ("ordenada\n");
+	//ft_print_list(*a); 
 }

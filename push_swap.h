@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 18:46:56 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/14 20:17:58 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/15 20:34:01 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,10 @@ int		ft_midi_list(t_stack *s);
 void	move_to_last(t_stack **a, t_stack **b, char *move);
 void	move_interchange(t_stack **a, t_stack **b, char *move);
 void	move_rotate (t_stack **a, t_stack **b, char *move);
-int 	ft_find_hole(t_stack **a, int pos);
-void	ft_sort_on_top(t_stack **s, int pos);
+int 	ft_find_hole(t_stack *s, int pos);
+void	ft_sort_on_top(t_stack **s, int pos, char *pila);
 void	ft_sort_on_top_both(t_stack **a, t_stack **b, int pos, int min);
-int ft_find_lower_cost(t_stack *a, t_stack *b);
+int		ft_find_lower_cost(t_stack *a, t_stack *b);
+int		ft_total_cost (int pos_a, t_stack *a, t_stack *b);
 
 #endif

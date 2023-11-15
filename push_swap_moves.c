@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 18:59:47 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/14 20:49:40 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/15 20:47:56 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,22 +56,35 @@ void	ft_min_to_top(t_stack **stack)
 	}
 }
 
-void	ft_sort_on_top(t_stack **s, int pos)
+void	ft_sort_on_top(t_stack **s, int pos, char *pila)
 {
-	t_stack *aux;
 	int 	i;
+	t_stack *aux;
 	
 	aux = *s;
-	i = (*s)->cost_a;
+	while (aux->pos != pos)
+		aux = aux->next;
+	
+	i = aux->cost_a;
 	while ((*s)-> pos != pos)
 	{
 		if (i < 0)
-			move_rotate(s, NULL, "rra");
+		{
+			if (ft_strcmp (pila, "a") == 0)
+				move_rotate(s, NULL, "rra");
+			else
+				move_rotate(NULL, s, "rrb");
+		}
 		else
-			move_to_last(s, NULL, "ra");
+		{
+			if (ft_strcmp (pila, "a") == 0)
+				move_to_last(s, NULL, "ra");
+			
+			else
+				move_to_last(NULL, s, "rb");
+		}
+		
 	}
-	//printf("ontop");
-	//ft_print_list(*s);
 }
 
 
@@ -81,38 +94,41 @@ void	ft_sort_on_top_both(t_stack **a, t_stack **b, int pos_a, int pos_b)
 	{
 		if ((*a)->cost_a < 0 && (*b)->cost_b < 0)
 			move_rotate(a, b, "rrr");
-		else if ((*a)->cost_a > 0 && (*b)->cost_b > 0)
+		if ((*a)->cost_a > 0 && (*b)->cost_b > 0)
 			move_rotate(a, b, "rr");
 		else
 		{
-			ft_sort_on_top(a, pos_a);
-			ft_sort_on_top(b, pos_b);
+			ft_sort_on_top(a, pos_a, "a");
+			ft_sort_on_top(b, pos_b, "b");
 		}
 	}
 }
-
-
-/// esto no lo hace bien!
 
 int ft_find_lower_cost(t_stack *a, t_stack *b)
 {
 	int min;
 	t_stack *aux_b;
 	t_stack *aux_a;
+	int pos_a;
 		
 	min = 0;
 	aux_b = b;
 	aux_a = a;
-	while ((abs(aux_a->cost_a) + (abs(aux_b->cost_b))) != min)
+	pos_a = 0;
+	while (b && b->next != NULL)
 	{
-		if (aux_a)
-			aux_a = aux_a->next;
-		else
+		pos_a = ft_find_hole(aux_a, b->pos);
+		
+		if (ft_total_cost (pos_a, a, b) == min)
+			return (aux_b->pos);
+		if (aux_b)
+			aux_b = aux_b->next;
+		else 
 		{
 			min++;
-			aux_b = aux_b->next;
-			aux_a = a;
+			aux_b = b;
 		}
 	}
+	//printf ("elemento de b a mover: %d\n", aux_b->pos);
 	return (aux_b->pos);
 }
