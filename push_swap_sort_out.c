@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:40:18 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/15 20:48:35 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/16 21:51:30 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void	ft_big_sort(t_stack **a, t_stack **b)
 {
 	ft_up_or_down(a, b);
 	ft_sort3(a);
+	//ft_print_list(*a);
+	//ft_print_list(*b);
 	ft_sort(a, b);
 }
 
@@ -72,18 +74,19 @@ void	ft_sort(t_stack **a, t_stack **b)
 	int		to_move_a;
 	int		to_move_b;
 	int		min;
-	
-	
+		
 	min = 0;
 	
 	while (*b)
 	{
 		ft_cost_a(a);
 		ft_cost_b(b);
-		//ft_print_list(*a); 
-		//ft_print_list(*b); 
+		
+		ft_print_list(*a); 
+		ft_print_list(*b); 
 		to_move_b = ft_find_lower_cost(*a, *b);
 		to_move_a = ft_find_hole(*a, (*b)->pos);
+		printf ("muevo de b: %d a la posicion %d de a\n", to_move_b, to_move_a);
 		ft_sort_on_top_both(a, b, to_move_a, to_move_b);
 		push(b, a);
 		write(1, "pa\n", 3);
@@ -95,7 +98,7 @@ void	ft_sort(t_stack **a, t_stack **b)
 			move_to_last(a, NULL, "ra");
 		else
 			move_rotate(a, NULL, "rra");
-	} 
-	//printf ("ordenada\n");
-	//ft_print_list(*a); 
+	}
+	printf ("ordenada\n");
+	ft_print_list(*a); 
 }

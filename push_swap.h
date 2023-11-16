@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 18:46:56 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/15 20:34:01 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/16 19:05:17 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_stack
 	int				data;
 	int				pos;
 	int				cost_a;
-	int				cost_b;	
+	int				cost_b;
 	int				cost;
 	struct s_stack	*next;
 }					t_stack;

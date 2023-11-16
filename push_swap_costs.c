@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:16:00 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/15 20:19:23 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/16 21:54:37 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,9 @@ int ft_find_hole(t_stack *s, int pos)
 	i = pos+1;
 	
 	aux = s;
-	while (aux->pos != i && aux != NULL)
+	while (aux->pos != i && aux && aux->next)
 	{
-		while  (aux->pos != i && aux != NULL && aux->next != NULL)
+		while  (aux->pos != i && aux && aux->next)
 			aux = aux->next;
 		if (aux->pos == i)
 			return (i);
@@ -94,7 +94,8 @@ int ft_find_hole(t_stack *s, int pos)
 
 int ft_total_cost (int pos_a, t_stack *a, t_stack *b)
 {
-			
+	printf("pos_a: %d\n", pos_a);			
+	printf("pos_b: %d", b->pos);
 	while (a && a->pos != pos_a)
 		a = a->next;
 	if (a->cost_a > 0 && b->cost_b > 0)
@@ -106,11 +107,14 @@ int ft_total_cost (int pos_a, t_stack *a, t_stack *b)
 	}
 	else if (a->cost_a < 0 && b->cost_b < 0)
 	{
-		if (a->cost_a > b->cost_b)
+		if (a->cost_a < b->cost_b)
 			return (a->cost_a);
 		else
 			return (b->cost_b);
 	}
 	else
+	{
+		printf("el coste es: %d\n", abs (a->cost_a) + abs (b->cost_b));
 		return (abs (a->cost_a) + abs (b->cost_b));
+	}
 }

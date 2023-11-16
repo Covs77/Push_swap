@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 18:59:47 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/15 20:47:56 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/16 21:42:33 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,16 @@ void	ft_sort_on_top(t_stack **s, int pos, char *pila)
 	aux = *s;
 	while (aux->pos != pos)
 		aux = aux->next;
-	
-	i = aux->cost_a;
+	if (ft_strcmp (pila, "a") == 0)
+		i = aux->cost_a;
+	else 
+		i = aux->cost_b;
+		
 	while ((*s)-> pos != pos)
 	{
+		printf ("i: %d\n", i);
+		printf ("pos: %d\n", (*s)->pos);
+		printf ("pos fin: %d\n", pos);
 		if (i < 0)
 		{
 			if (ft_strcmp (pila, "a") == 0)
@@ -104,28 +110,34 @@ void	ft_sort_on_top_both(t_stack **a, t_stack **b, int pos_a, int pos_b)
 	}
 }
 
+
+// no calcula los costes totales bien
+
 int ft_find_lower_cost(t_stack *a, t_stack *b)
 {
 	int min;
 	t_stack *aux_b;
 	t_stack *aux_a;
-	int pos_a;
+	int pos_a, total_cost;
 		
 	min = 0;
 	aux_b = b;
 	aux_a = a;
 	pos_a = 0;
-	while (b && b->next != NULL)
+	total_cost = 0;
+	while (aux_b)
 	{
-		pos_a = ft_find_hole(aux_a, b->pos);
-		
-		if (ft_total_cost (pos_a, a, b) == min)
+		pos_a = ft_find_hole(aux_a, aux_b->pos);
+		total_cost = ft_total_cost (pos_a, a, aux_b);
+		printf ("total cost: %d\n", total_cost);
+		if (total_cost == min)
 			return (aux_b->pos);
-		if (aux_b)
+		else
 			aux_b = aux_b->next;
-		else 
+		if (aux_b == NULL)
 		{
 			min++;
+			printf ("min: %d\n", min);
 			aux_b = b;
 		}
 	}
