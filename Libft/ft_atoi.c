@@ -6,14 +6,19 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 11:47:37 by cleguina          #+#    #+#             */
-/*   Updated: 2023/10/26 18:42:49 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/17 16:57:06 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+#include <limits.h>
+#include <unistd.h>
+#include <stdlib.h>
+
+
+long int	ft_atoi(const char *str)
 {
-	int	num;
-	int	sign;
+	long int	num;
+	long int	sign;
 
 	sign = 1;
 	num = 0;
@@ -30,5 +35,10 @@ int	ft_atoi(const char *str)
 		num = num * 10 + *str - 48;
 		str++;
 	}
+	if ((num * sign) > INT_MAX || (num * sign) < INT_MIN)
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}	
 	return (sign * num);
 }

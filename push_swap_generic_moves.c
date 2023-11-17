@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 17:40:35 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/02 16:55:40 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/17 16:26:30 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	to_last(t_stack **stack)
 	int		len;
 
 	len = ft_len_list(*stack);
-	if (len > 2)
+	if (len >= 2)
 	{
 		aux = *stack;
 		*stack = (*stack)->next;

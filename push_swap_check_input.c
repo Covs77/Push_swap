@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:47:22 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/08 21:14:34 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/17 16:45:21 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	ft_error(int error)
 {
 	if (error == 1)
 	{
-		write (1, "Error", 5);
-		write (1, "\n", 1);
+		write (2, "Error", 5);
+		write (2, "\n", 1);
 	}
 }
 

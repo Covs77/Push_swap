@@ -5,7 +5,7 @@
       "name": "C/C++ Runner: Debug Session",
       "type": "lldb",
       "request": "launch",
-      "args": ["15", "7", "10", "20", "19", "17", "14", "1", "6", "11", "4","9", "18", "5", "13", "16", "8", "2", "3", "12"],
+      "args": ["15", "7" , "10" ,"20" ,"19", "17", "14", "1", "6", "11", "4", "9", "18", "5", "13", "16", "8", "2", "3", "12"] ,
       "cwd": "/Users/cleguina/Documents/CURSUS/push_swap",
       "program": "/Users/cleguina/Documents/CURSUS/push_swap"
     }
