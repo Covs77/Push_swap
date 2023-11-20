@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 18:34:48 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/13 19:05:16 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/20 20:47:32 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,11 @@ int	ft_back_order(t_stack *stack)
 	return (1);
 }
 
-int	ft_max(t_stack *s, int max)
+int	ft_max(t_stack *s)
 {
+	int	max;
+
+	max = s->data;
 	while (s != NULL)
 	{
 		if (max <= s->data)

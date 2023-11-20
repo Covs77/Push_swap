@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 19:15:35 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/08 20:14:51 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/20 17:27:33 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_new_nodo(t_stack **stack, int valor)
 	new_nodo->next = NULL;
 	new_nodo->cost_a = 0;
 	new_nodo->cost_b = 0;
-	new_nodo->cost = 0;
 	aux = NULL;
 	if (*stack == NULL)
 		*stack = new_nodo;

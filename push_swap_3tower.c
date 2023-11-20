@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_3tower.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:22:09 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/12 14:10:47 by cova             ###   ########.fr       */
+/*   Updated: 2023/11/20 20:48:21 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,15 @@ void	ft_3tower(t_stack **stack_origin, t_stack **stack_dest)
 
 void	ft_sort3(t_stack **stack)
 {
-	
+	int	max;
+
+	max = ft_max(*stack);
+	if ((*stack)->data == max)
+		move_to_last(stack, NULL, "ra");
+	if ((*stack)->next->data == max)
+		move_rotate(stack, NULL, "rra");
 	if ((*stack)->data > (*stack)->next->data)
 		move_interchange(stack, NULL, "sa");
-	if ((*stack)->data > ft_lst_last(*stack)->data)
-		move_rotate(stack, NULL, "rra");
-	else if (ft_order(*stack) == 0)
-	{
-		move_rotate(stack, NULL, "rra");
-		move_interchange(stack, NULL, "sa");
-	}
 }
 
 void	ft_sort_2(t_stack **s)

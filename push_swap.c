@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 19:29:21 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/17 17:26:02 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/20 19:45:20 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(int argc, char **argv)
 		}
 		stack_a = ft_make_list(str);
 		ft_get_pos(stack_a, str);
-		if (ft_len_list(*stack_a) > 2)
+		if (ft_len_list(*stack_a) >= 2)
 			ft_sort_out(stack_a, argc);
 	}
 	ft_error(error);

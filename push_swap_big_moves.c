@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 19:33:42 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/14 20:15:06 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/20 18:29:37 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <limits.h>
 #include <unistd.h>
 
-void move_interchange(t_stack **a, t_stack **b, char *move)
+void	move_interchange(t_stack **a, t_stack **b, char *move)
 {
 	if (ft_strcmp (move, "sa") == 0)
 	{
@@ -54,7 +54,7 @@ void	move_to_last(t_stack **a, t_stack **b, char *move)
 	}
 }
 
-void move_rotate (t_stack **a, t_stack **b, char *move)
+void	move_rotate(t_stack **a, t_stack **b, char *move)
 {
 	if (ft_strcmp (move, "rra") == 0)
 	{
@@ -73,8 +73,6 @@ void move_rotate (t_stack **a, t_stack **b, char *move)
 		write(1, "rrr\n", 4);
 	}
 }
-
-
 
 void	ft_up_or_down(t_stack **a, t_stack **b)
 {
@@ -100,6 +98,4 @@ void	ft_up_or_down(t_stack **a, t_stack **b)
 			write(1, "pb\n", 3);
 		}
 	}
-	//ft_print_list(*a);
-	//ft_print_list(*b);
 }

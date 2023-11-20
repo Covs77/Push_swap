@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 18:46:56 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/16 19:05:17 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/20 20:46:18 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct s_stack
 	int				pos;
 	int				cost_a;
 	int				cost_b;
-	int				cost;
 	struct s_stack	*next;
 }					t_stack;
 int		ft_len_list(t_stack *stack);
@@ -51,7 +50,6 @@ void	ft_sort3(t_stack **stack);
 void	ft_3tower(t_stack **stack_origin, t_stack **stack_dest);
 void	ft_sort5(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_out(t_stack **stack_a, int argc);
-//void	ft_move_max(t_stack **s, t_stack **dest);
 int		ft_min(t_stack *stack);
 void	ft_min_to_top(t_stack **stack);
 void	ft_on_top(t_stack **s, int counter);
@@ -60,7 +58,7 @@ void	ft_sort_2(t_stack **s);
 void	ft_free(t_stack **s);
 void	ft_big_sort(t_stack **stack_a, t_stack **stack_b);
 void	ft_up_or_down(t_stack **a, t_stack **b);
-int		ft_max(t_stack *s, int max);
+int		ft_max(t_stack *s);
 void	ft_get_pos(t_stack **s, char **str);
 void	ft_bubble_sort(char **str);
 void	ft_cost(t_stack **a, t_stack **b);
@@ -72,11 +70,11 @@ void	ft_cost_a(t_stack **a);
 int		ft_midi_list(t_stack *s);
 void	move_to_last(t_stack **a, t_stack **b, char *move);
 void	move_interchange(t_stack **a, t_stack **b, char *move);
-void	move_rotate (t_stack **a, t_stack **b, char *move);
-int 	ft_find_hole(t_stack *s, int pos);
+void	move_rotate(t_stack **a, t_stack **b, char *move);
+int		ft_find_hole(t_stack *s, int pos);
 void	ft_sort_on_top(t_stack **s, int pos, char *pila);
 void	ft_sort_on_top_both(t_stack **a, t_stack **b, int pos, int min);
 int		ft_find_lower_cost(t_stack *a, t_stack *b);
-int		ft_total_cost (int pos_a, t_stack *a, t_stack *b);
-
+int		ft_total_cost(int pos_a, t_stack *a, t_stack *b);
+void	ft_top_stack(int i, t_stack **s, char *pila);
 #endif

@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:59:01 by cova              #+#    #+#             */
-/*   Updated: 2023/11/14 20:08:13 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:47:03 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@
 
 void	ft_print_list(t_stack *stack)
 {
-//	printf ("\nLista :\n");
 	while (stack != NULL)
 	{
 		printf ("%d  ", stack->data);
@@ -56,4 +55,3 @@ void	ft_print_list(t_stack *stack)
 	}
 	printf("\n");
 }
- 

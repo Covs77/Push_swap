@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:16:00 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/17 16:44:21 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:48:59 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,18 +69,16 @@ void	ft_cost_a(t_stack **a)
 	}
 }
 
-int ft_find_hole(t_stack *s, int pos)
+int	ft_find_hole(t_stack *s, int pos)
 {
 	t_stack	*aux;
-	int i;
-	
-	i = pos+1;
-	//printf("empizo a buscar: %d ", i);
-	
+	int		i;
+
+	i = pos + 1;
 	aux = s;
 	while (aux->pos != i && aux && aux->next)
 	{
-		while  (aux->pos != i && aux && aux->next)
+		while (aux->pos != i && aux && aux->next)
 			aux = aux->next;
 		if (aux->pos == i)
 			return (i);
@@ -89,14 +87,12 @@ int ft_find_hole(t_stack *s, int pos)
 			i++;
 			aux = s;
 		}
-	}	
+	}
 	return (i);
 }
 
-int ft_total_cost (int pos_a, t_stack *a, t_stack *b)
+int	ft_total_cost(int pos_a, t_stack *a, t_stack *b)
 {
-	//printf("pos_a: %d ", pos_a);			
-	//printf("pos_b: %d  ", b->pos);
 	while (a && a->pos != pos_a)
 		a = a->next;
 	if (a->cost_a > 0 && b->cost_b > 0)
@@ -114,8 +110,5 @@ int ft_total_cost (int pos_a, t_stack *a, t_stack *b)
 			return (b->cost_b);
 	}
 	else
-	{
-		//printf("el coste es: %d\n", abs (a->cost_a) + abs (b->cost_b));
 		return (abs (a->cost_a) + abs (b->cost_b));
-	}
 }

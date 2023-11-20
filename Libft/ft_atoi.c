@@ -6,14 +6,13 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 11:47:37 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/17 16:57:06 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:26:19 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
 #include <unistd.h>
 #include <stdlib.h>
-
 
 long int	ft_atoi(const char *str)
 {
@@ -39,6 +38,6 @@ long int	ft_atoi(const char *str)
 	{
 		write(2, "Error\n", 6);
 		exit(1);
-	}	
+	}
 	return (sign * num);
 }

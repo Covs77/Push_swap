@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 13:32:10 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/17 16:56:36 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:46:16 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char		*ft_strrchr(const char *s, int c);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 void		*ft_memcpy(void *dst, const void *src, size_t n);
 void		*ft_memset(void *str, int c, size_t n);
-void			*ft_memmove(void *dst, const void *src, size_t len);
+void		*ft_memmove(void *dst, const void *src, size_t len);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 void		*ft_memchr(const void *s, int c, size_t n);
