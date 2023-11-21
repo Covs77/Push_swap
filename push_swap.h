@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 18:46:56 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/20 20:46:18 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/21 19:16:28 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_min_to_top(t_stack **stack);
 void	ft_on_top(t_stack **s, int counter);
 int		ft_back_order(t_stack *stack);
 void	ft_sort_2(t_stack **s);
-void	ft_free(t_stack **s);
+void	ft_free_list(t_stack **s);
 void	ft_big_sort(t_stack **stack_a, t_stack **stack_b);
 void	ft_up_or_down(t_stack **a, t_stack **b);
 int		ft_max(t_stack *s);
@@ -77,4 +77,7 @@ void	ft_sort_on_top_both(t_stack **a, t_stack **b, int pos, int min);
 int		ft_find_lower_cost(t_stack *a, t_stack *b);
 int		ft_total_cost(int pos_a, t_stack *a, t_stack *b);
 void	ft_top_stack(int i, t_stack **s, char *pila);
+char	*ft_strjoin_free(char *s1, char  *s2);
+void	ft_free_matrix(char **str);
+
 #endif

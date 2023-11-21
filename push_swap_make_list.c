@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 19:15:35 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/20 17:27:33 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/21 21:03:25 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_new_nodo(t_stack **stack, int valor)
 	t_stack	*new_nodo;
 	t_stack	*aux;
 
-	new_nodo = (t_stack *)malloc (sizeof (t_stack));
+	new_nodo = malloc (sizeof (t_stack));
 	if (!new_nodo)
 		return ;
 	new_nodo->data = valor;
@@ -45,7 +45,8 @@ t_stack	**ft_make_list(char **str)
 	int		valor;
 
 	i = 0;
-	stack = (t_stack **)malloc(sizeof(t_stack *));
+	stack = malloc(sizeof(t_stack *));
+	//stack = (t_stack **)malloc(sizeof(t_stack *));
 	if (!stack)
 		return (NULL);
 	*stack = NULL;
@@ -58,6 +59,7 @@ t_stack	**ft_make_list(char **str)
 	return (stack);
 }
 
+
 char	**ft_read_arg(int argc, char **argv)
 {
 	int		i;
@@ -65,21 +67,22 @@ char	**ft_read_arg(int argc, char **argv)
 	char	**readed;
 
 	i = 1;
-	while (i <= argc -1)
-	{
-		str = malloc (sizeof (char *) * argc + 1);
+//	while (i <= argc -1)
+//	{
+		str = malloc (sizeof (char *) * argc);
 		if (!str)
 			return (0);
-		i++;
-	}
+//		i++;
+//	}
 	i = 1;
 	while (i <= argc - 1)
 	{
-		str = ft_strjoin(str, argv[i]);
-		str = ft_strjoin(str, " ");
+		str = ft_strjoin_free(str, argv[i]);
+		str = ft_strjoin_free(str, " ");
 		i++;
 	}
 	readed = ft_split (str, ' ');
+	free(str);
 	return (readed);
 }
 

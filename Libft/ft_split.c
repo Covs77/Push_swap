@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:04:32 by cleguina          #+#    #+#             */
-/*   Updated: 2023/05/02 18:48:26 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/21 19:27:06 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,15 @@ char	**ft_freeall(char **list)
 	size_t	j;
 
 	j = 0;
-	while (list[j])
-	{
-		free(list[j]);
-		j++;
+	if (list)
+	{	
+		while (list[j])
+		{
+			free(list[j]);
+			j++;
+		}
+		free(list);
 	}
-	free(list);
 	return (NULL);
 }
 
@@ -53,7 +56,7 @@ char	*ft_strndup(const char *s, size_t n)
 	str = NULL;
 	if (n == 0)
 		return (NULL);
-	str = (char *)malloc(sizeof(char) * (n + 1));
+	str = malloc(sizeof(char) * (n + 1));
 	if (str == 0)
 		return (NULL);
 	while (i < n)
@@ -74,7 +77,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	k = 0;
-	res = (char **)malloc (sizeof(char *) * (ft_words(s, c) + 1));
+	res = malloc (sizeof(char *) * (ft_words(s, c) + 1));
 	if (!res)
 		return (0);
 	while (i < ft_words(s, c) && s[k] != '\0')

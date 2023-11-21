@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:47:22 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/17 16:45:21 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/21 19:20:41 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ int	ft_check_inputs(char **str)
 	return (0);
 }
 
-void	ft_free(t_stack **s)
+void	ft_free_list(t_stack **s)
 {
 	t_stack	*aux;
 
@@ -103,5 +103,6 @@ void	ft_free(t_stack **s)
 			*s = (*s)->next;
 			free(aux);
 		}
+		free(s);
 	}
 }

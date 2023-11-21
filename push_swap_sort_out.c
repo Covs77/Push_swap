@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:40:18 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/20 20:47:44 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/21 21:12:54 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	ft_sort5(t_stack **stack_a, t_stack **stack_b)
 {
-	stack_b = (t_stack **)malloc(sizeof(t_stack *));
+	stack_b = malloc(sizeof(t_stack *));
 	if (!stack_b)
 		return ;
 	*stack_b = NULL;
@@ -36,6 +36,7 @@ void	ft_sort5(t_stack **stack_a, t_stack **stack_b)
 			write(1, "pa\n", 3);
 		}
 	}
+	ft_free_list(stack_b);
 }
 
 void	ft_big_sort(t_stack **a, t_stack **b)
@@ -49,8 +50,8 @@ void	ft_sort_out(t_stack **stack_a, int nums)
 {
 	t_stack	**stack_b;
 
-	nums--;
-	stack_b = (t_stack **)malloc(sizeof(t_stack *));
+	
+	stack_b = malloc(sizeof(t_stack *));
 	if (!stack_b)
 		return ;
 	*stack_b = NULL;
@@ -62,7 +63,7 @@ void	ft_sort_out(t_stack **stack_a, int nums)
 		ft_sort5(stack_a, stack_b);
 	else
 		ft_big_sort(stack_a, stack_b);
-	ft_free(stack_b);
+	ft_free_list(stack_b);
 }
 
 void	ft_sort(t_stack **a, t_stack **b)
