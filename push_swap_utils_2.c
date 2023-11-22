@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 18:34:48 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/20 20:47:32 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/22 16:37:26 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	ft_order(t_stack *stack)
 	return (1);
 }
 
-int	ft_back_order(t_stack *stack)
+/* int	ft_back_order(t_stack *stack)
 {
 	int	len;
 
@@ -77,7 +77,7 @@ int	ft_back_order(t_stack *stack)
 			return (0);
 	}
 	return (1);
-}
+} */
 
 int	ft_max(t_stack *s)
 {

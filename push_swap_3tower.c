@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:22:09 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/21 19:13:31 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/22 16:52:01 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,41 +47,43 @@ void	ft_sort_2(t_stack **s)
 		move_interchange(s, NULL, "sa");
 }
 
-char	*ft_strjoin_free(char *s1, char  *s2)
+// pone el mas pequeño encima ---solo 3 elementos---
+void	ft_on_top(t_stack **s, int counter)
 {
-	char	*s3;
-	size_t	l_s1;
-	size_t	l_s2;
-	size_t	l_s3;
+	int	len;
 
-	l_s1 = ft_strlen(s1);
-	l_s2 = ft_strlen(s2);
-	l_s3 = l_s1 + l_s2;
-	if (!s1 && !s2)
-		return (0);
-	s3 = malloc (sizeof(char) * l_s3 + 1);
-	if (s3 == NULL)
-		return (0);
-	s3 = ft_memcpy(s3, s1, l_s1);
-	s3 = s3 + l_s1;
-	s3 = ft_memcpy(s3, s2, l_s2 + 1);
-	free(s1);
-	return (s3 - (l_s1));
+	len = (ft_len_list(*s) / 2);
+	if (counter >= len)
+		move_rotate(s, NULL, "rra");
+	else if (counter == 1)
+		move_interchange(s, NULL, "sa");
+	else
+		move_to_last(s, NULL, "ra");
 }
 
-
-void	ft_free_matrix(char **str)
+//funcion que pone el menor encima del stack (hasta 5 elementos)
+void	ft_min_to_top(t_stack **stack)
 {
-	int i;
+	int		min;
+	t_stack	*pointer;
+	int		contador;
 
-	i = 0;
-	if (str)
+	min = ft_min(*stack);
+	contador = 0;
+	pointer = *stack;
+	if (pointer->data == min)
+		return ;
+	else
 	{
-		while (str[i])
+		while (pointer->data != min)
 		{
-			free(str[i]);
-			i++;
+			pointer = pointer->next;
+			contador++;
+			if (pointer->data == min)
+			{
+				ft_on_top(stack, contador);
+				pointer = *stack;
+			}
 		}
-		free (str);
 	}
 }

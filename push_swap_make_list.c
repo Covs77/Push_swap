@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 19:15:35 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/21 21:03:25 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/22 16:52:20 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ t_stack	**ft_make_list(char **str)
 
 	i = 0;
 	stack = malloc(sizeof(t_stack *));
-	//stack = (t_stack **)malloc(sizeof(t_stack *));
 	if (!stack)
 		return (NULL);
 	*stack = NULL;
@@ -59,7 +58,6 @@ t_stack	**ft_make_list(char **str)
 	return (stack);
 }
 
-
 char	**ft_read_arg(int argc, char **argv)
 {
 	int		i;
@@ -67,14 +65,9 @@ char	**ft_read_arg(int argc, char **argv)
 	char	**readed;
 
 	i = 1;
-//	while (i <= argc -1)
-//	{
-		str = malloc (sizeof (char *) * argc);
-		if (!str)
-			return (0);
-//		i++;
-//	}
-	i = 1;
+	str = malloc (sizeof (char *) * argc);
+	if (!str)
+		return (0);
 	while (i <= argc - 1)
 	{
 		str = ft_strjoin_free(str, argv[i]);
@@ -111,4 +104,26 @@ void	ft_get_pos(t_stack **s, char **str)
 		}
 		i = 0;
 	}
+}
+
+char	*ft_strjoin_free(char *s1, char *s2)
+{
+	char	*s3;
+	size_t	l_s1;
+	size_t	l_s2;
+	size_t	l_s3;
+
+	l_s1 = ft_strlen(s1);
+	l_s2 = ft_strlen(s2);
+	l_s3 = l_s1 + l_s2;
+	if (!s1 && !s2)
+		return (0);
+	s3 = malloc (sizeof(char) * l_s3 + 1);
+	if (s3 == NULL)
+		return (0);
+	s3 = ft_memcpy(s3, s1, l_s1);
+	s3 = s3 + l_s1;
+	s3 = ft_memcpy(s3, s2, l_s2 + 1);
+	free(s1);
+	return (s3 - (l_s1));
 }

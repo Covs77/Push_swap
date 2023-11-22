@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 18:46:56 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/21 19:16:28 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/22 19:24:13 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,6 @@ void	ft_error(int error);
 int		ft_medium(t_stack *stack);
 int		ft_order(t_stack *stack);
 void	ft_check_moves(t_stack *stack_a, t_stack *stack_b);
-t_stack	*ra(t_stack *stack);
-t_stack	*rra(t_stack *stack);
-t_stack	*sa(t_stack *stack);
 void	push(t_stack **stack_origin, t_stack **stack_dest);
 void	interchange(t_stack **stack);
 void	rotate(t_stack **stack);
@@ -77,7 +74,10 @@ void	ft_sort_on_top_both(t_stack **a, t_stack **b, int pos, int min);
 int		ft_find_lower_cost(t_stack *a, t_stack *b);
 int		ft_total_cost(int pos_a, t_stack *a, t_stack *b);
 void	ft_top_stack(int i, t_stack **s, char *pila);
-char	*ft_strjoin_free(char *s1, char  *s2);
+char	*ft_strjoin_free(char *s1, char *s2);
 void	ft_free_matrix(char **str);
+void	ft_both_to_last(t_stack **a, t_stack **b, int cost_a, int cost_b);
+void	ft_both_rotate(t_stack **a, t_stack **b, int cost_a, int cost_b);
+int		ft_both_cost(t_stack **a, t_stack **b, int pos);
 
 #endif

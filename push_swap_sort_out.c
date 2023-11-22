@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:40:18 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/21 21:12:54 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/22 20:23:34 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ void	ft_sort_out(t_stack **stack_a, int nums)
 {
 	t_stack	**stack_b;
 
-	
+	if (ft_order(*stack_a) == 1)
+		return ;
 	stack_b = malloc(sizeof(t_stack *));
 	if (!stack_b)
 		return ;
@@ -90,4 +91,33 @@ void	ft_sort(t_stack **a, t_stack **b)
 		else
 			move_rotate(a, NULL, "rra");
 	}
+}
+
+int	ft_find_lower_cost(t_stack *a, t_stack *b)
+{
+	int		min;
+	t_stack	*aux_b;
+	t_stack	*aux_a;
+	int		pos_a;
+	int		total_cost;
+
+	min = 0;
+	aux_b = b;
+	aux_a = a;
+	total_cost = 0;
+	while (aux_b)
+	{
+		pos_a = ft_find_hole(aux_a, aux_b->pos);
+		total_cost = ft_total_cost (pos_a, a, aux_b);
+		if (total_cost == min)
+			return (aux_b->pos);
+		else
+			aux_b = aux_b->next;
+		if (aux_b == NULL)
+		{
+			min++;
+			aux_b = b;
+		}
+	}
+	return (aux_b->pos);
 }

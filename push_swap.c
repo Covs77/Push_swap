@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 19:29:21 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/21 21:34:44 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/22 18:52:54 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,12 @@
 #include <stdio.h>
 #include "push_swap.h"
 
-/* void ft_l(void)
-{
-	system("leaks -q push_swap");
-} 
- */
 int	main(int argc, char **argv)
 {
 	t_stack	**stack_a;
 	char	**str;
 	int		error;
 
-	//atexit(ft_l);
 	error = 0;
 	stack_a = NULL;
 	if (argc > 1)

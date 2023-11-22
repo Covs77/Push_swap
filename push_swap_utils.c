@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 19:31:50 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/20 17:20:11 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/22 16:52:41 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,16 +79,18 @@ t_stack	*ft_add_back(t_stack *stack, t_stack *new)
 	return (stack);
 }
 
-// pone el mas pequeño encima ---solo 3 elementos---
-void	ft_on_top(t_stack **s, int counter)
+void	ft_free_matrix(char **str)
 {
-	int	len;
+	int	i;
 
-	len = (ft_len_list(*s) / 2);
-	if (counter >= len)
-		move_rotate(s, NULL, "rra");
-	else if (counter == 1)
-		move_interchange(s, NULL, "sa");
-	else
-		move_to_last(s, NULL, "ra");
+	i = 0;
+	if (str)
+	{
+		while (str[i])
+		{
+			free(str[i]);
+			i++;
+		}
+		free (str);
+	}
 }

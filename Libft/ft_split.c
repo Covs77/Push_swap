@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:04:32 by cleguina          #+#    #+#             */
-/*   Updated: 2023/11/21 19:27:06 by cleguina         ###   ########.fr       */
+/*   Updated: 2023/11/22 16:15:13 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	**ft_freeall(char **list)
 
 	j = 0;
 	if (list)
-	{	
+	{
 		while (list[j])
 		{
 			free(list[j]);

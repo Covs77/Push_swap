@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/cleguina/Documents/CURSUS/push_swap",
-      "program": "/Users/cleguina/Documents/CURSUS/push_swap/build/Debug/outDebug"
+      "cwd": "/Users/cleguina/Documents/CURSUS/push_swap_ok",
+      "program": "/Users/cleguina/Documents/CURSUS/push_swap_ok/build/Debug/outDebug"
     }
   ]
 }
